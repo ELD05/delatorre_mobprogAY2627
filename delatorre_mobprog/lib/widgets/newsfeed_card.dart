@@ -31,7 +31,12 @@ class NewsFeedCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Icon(Icons.person),
+                CircleAvatar(
+                  radius: ScreenUtil().setWidth(20),
+                  backgroundImage: const NetworkImage(
+                    'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg',
+                  ),
+                ),
                 SizedBox(
                   width: ScreenUtil().setWidth(10),
                 ),
@@ -134,7 +139,12 @@ class NewsFeedCard extends StatelessWidget {
 
             Row(
               children: [
-                Icon(Icons.person),
+                CircleAvatar(
+                  radius: ScreenUtil().setWidth(14),
+                  backgroundImage: const NetworkImage(
+                    'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg',
+                  ),
+                ),
                 SizedBox(
                   width: ScreenUtil().setWidth(10),
                 ),
