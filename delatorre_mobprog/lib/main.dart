@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '/screens/home_screen.dart';
-import '/screens/newsfeed_screen.dart';
+import 'screens/home_screen.dart';
+import 'screens/newsfeed_screen.dart';
 
 void main() {
   runApp(const DelaTorreFacebook());
@@ -23,7 +23,7 @@ class DelaTorreFacebook extends StatelessWidget {
           initialRoute: '/home',
           routes: {
             '/home': (context) => const HomeScreen(),
-            '/newsfeed': (context) => const NewsfeedScreen()
+            '/newsfeed': (context) => const NewsFeedScreen()
           },
         );
       },
