@@ -92,17 +92,12 @@ class NewsFeedCard extends StatelessWidget {
                 : SizedBox(
                     height: ScreenUtil().setHeight(1),
                   ),
-                CustomText(
-                  text: numOfLikes.toString(),
-                  fontSize: ScreenUtil().setSp(12),
-                  color: Colors.grey,
-                ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 PostActionButton(
                   icon: Icons.thumb_up_outlined,
-                  label: 'Like',
+                  label: numOfLikes.toString(),
                   onPressed: () {},
                 ),
                 PostActionButton(
