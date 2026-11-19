@@ -90,49 +90,45 @@ class NewsFeedCard extends StatelessWidget {
                     height: ScreenUtil().setHeight(200),
                     fit: BoxFit.cover,
                   )
-              : SizedBox(
-                  height: ScreenUtil().setHeight(1),
+                : SizedBox(
+                    height: ScreenUtil().setHeight(1),
+                  ),
+
+            // Enhancement 3: number of likes
+            Row(
+              children: [
+                Icon(
+                  Icons.thumb_up,
+                  size: ScreenUtil().setSp(14),
+                  color: FB_DARK_PRIMARY,
                 ),
+                SizedBox(width: ScreenUtil().setWidth(5)),
+                CustomText(
+                  text: numOfLikes.toString(),
+                  fontSize: ScreenUtil().setSp(12),
+                  color: Colors.grey,
+                ),
+              ],
+            ),
+
+            // Enhancement 3: widget-based buttons
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                TextButton.icon(
-                  onPressed: () {
-                    print('Liked');
-                  },
-                  icon: const Icon(
-                    Icons.thumb_up,
-                    color: FB_DARK_PRIMARY,
-                  ),
-                  label: CustomText(
-                    text: numOfLikes.toString(),
-                    fontSize: ScreenUtil().setSp(12),
-                    color: FB_DARK_PRIMARY,
-                  ),
-                ),
-                TextButton.icon(
+                PostActionButton(
+                  icon: Icons.thumb_up_outlined,
+                  label: 'Like',
                   onPressed: () {},
-                  icon: const Icon(
-                    Icons.comment,
-                    color: FB_DARK_PRIMARY,
-                  ),
-                  label: CustomText(
-                    text: 'Comment',
-                    fontSize: ScreenUtil().setSp(12),
-                    color: FB_DARK_PRIMARY,
-                  ),
                 ),
-                TextButton.icon(
+                PostActionButton(
+                  icon: Icons.comment,
+                  label: 'Comment',
                   onPressed: () {},
-                  icon: const Icon(
-                    Icons.redo,
-                    color: FB_DARK_PRIMARY,
-                  ),
-                  label: CustomText(
-                    text: 'Share',
-                    fontSize: ScreenUtil().setSp(12),
-                    color: FB_DARK_PRIMARY,
-                  ),
+                ),
+                PostActionButton(
+                  icon: Icons.redo,
+                  label: 'Share',
+                  onPressed: () {},
                 ),
               ],
             ),
@@ -178,6 +174,33 @@ class NewsFeedCard extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+// Enhancement 3: reusable button widget (outside NewsFeedCard)
+class PostActionButton extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final VoidCallback onPressed;
+
+  const PostActionButton({
+    super.key,
+    required this.icon,
+    required this.label,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton.icon(
+      onPressed: onPressed,
+      icon: Icon(icon, color: FB_DARK_PRIMARY),
+      label: CustomText(
+        text: label,
+        fontSize: ScreenUtil().setSp(12),
+        color: FB_DARK_PRIMARY,
       ),
     );
   }
