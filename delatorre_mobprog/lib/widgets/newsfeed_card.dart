@@ -76,7 +76,6 @@ class NewsFeedCard extends StatelessWidget {
             ),
             SizedBox(height: ScreenUtil().setHeight(5)),
 
-            // Post Content
             CustomText(
               text: postContent,
               fontSize: ScreenUtil().setSp(12),
@@ -93,25 +92,11 @@ class NewsFeedCard extends StatelessWidget {
                 : SizedBox(
                     height: ScreenUtil().setHeight(1),
                   ),
-
-            // Enhancement 3: number of likes
-            Row(
-              children: [
-                Icon(
-                  Icons.thumb_up,
-                  size: ScreenUtil().setSp(14),
-                  color: FB_DARK_PRIMARY,
-                ),
-                SizedBox(width: ScreenUtil().setWidth(5)),
                 CustomText(
                   text: numOfLikes.toString(),
                   fontSize: ScreenUtil().setSp(12),
                   color: Colors.grey,
                 ),
-              ],
-            ),
-
-            // Enhancement 3: widget-based buttons
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -179,7 +164,6 @@ class NewsFeedCard extends StatelessWidget {
   }
 }
 
-// Enhancement 3: reusable button widget (outside NewsFeedCard)
 class PostActionButton extends StatelessWidget {
   final IconData icon;
   final String label;
