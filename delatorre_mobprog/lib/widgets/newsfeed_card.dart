@@ -101,7 +101,7 @@ class NewsFeedCard extends StatelessWidget {
                         onPressed: () {},
                       ),
                     PostActionButton(
-                        icon: Icons.comment,
+                        icon: Icons.comment_outlined,
                         label: 'Comment',
                         onPressed: () {},
                       ),
