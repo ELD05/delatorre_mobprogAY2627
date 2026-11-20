@@ -92,39 +92,26 @@ class NewsFeedCard extends StatelessWidget {
                 : SizedBox(
                     height: ScreenUtil().setHeight(1),
                   ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                PostActionButton(
-                  icon: Image.asset(
-                    'assets/images/thumb-up.png',
-                    width: ScreenUtil().setWidth(20),
-                    height: ScreenUtil().setHeight(20),
-                  ),
-                  label: numOfLikes.toString(),
-                  onPressed: () {},
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                    PostActionButton(
+                        icon: Icons.thumb_up_outlined,
+                        label: numOfLikes.toString(),
+                        onPressed: () {},
+                      ),
+                    PostActionButton(
+                        icon: Icons.comment,
+                        label: 'Comment',
+                        onPressed: () {},
+                      ),
+                    PostActionButton(
+                    icon: Icons.redo,
+                    label: 'Share',
+                    onPressed: () {},
+                    ),
+                  ],
                 ),
-                PostActionButton(
-                  icon: Image.asset(
-                    'assets/images/comment.png',
-                    width: ScreenUtil().setWidth(20),
-                    height: ScreenUtil().setHeight(20),
-                  ),
-                  label: 'Comment',
-                  onPressed: () {},
-                ),
-                PostActionButton(
-                  icon: Image.asset(
-                    'assets/images/share.png',
-                    width: ScreenUtil().setWidth(20),
-                    height: ScreenUtil().setHeight(20),
-                  ),
-                  label: 'Share',
-                  onPressed: () {},
-                ),
-              ],
-            ),
-
             Row(
               children: [
                 CircleAvatar(
@@ -172,7 +159,7 @@ class NewsFeedCard extends StatelessWidget {
 }
 
 class PostActionButton extends StatelessWidget {
-  final Widget icon;
+  final IconData icon;
   final String label;
   final VoidCallback onPressed;
 
@@ -187,7 +174,7 @@ class PostActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton.icon(
       onPressed: onPressed,
-      icon: icon,
+      icon: Icon(icon, color: Colors.black),
       label: CustomText(
         text: label,
         fontSize: ScreenUtil().setSp(12),

@@ -16,7 +16,7 @@ class NewsFeedScreen extends StatelessWidget {
         ),
         NewsFeedCard(
           userName: 'Charisse Baguio',
-          postContent: 'Kicking off the holiday season with ICpEP-NCR!',
+          postContent: 'Cool Owl on the tree.',
           numOfLikes: 200,
           hasImage: true,
           date: 'December 2'
