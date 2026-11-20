@@ -96,17 +96,29 @@ class NewsFeedCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 PostActionButton(
-                  icon: Icons.thumb_up_outlined,
+                  icon: Image.asset(
+                    'assets/images/thumb-up.png',
+                    width: ScreenUtil().setWidth(20),
+                    height: ScreenUtil().setHeight(20),
+                  ),
                   label: numOfLikes.toString(),
                   onPressed: () {},
                 ),
                 PostActionButton(
-                  icon: Icons.comment,
+                  icon: Image.asset(
+                    'assets/images/comment.png',
+                    width: ScreenUtil().setWidth(20),
+                    height: ScreenUtil().setHeight(20),
+                  ),
                   label: 'Comment',
                   onPressed: () {},
                 ),
                 PostActionButton(
-                  icon: Icons.redo,
+                  icon: Image.asset(
+                    'assets/images/share.png',
+                    width: ScreenUtil().setWidth(20),
+                    height: ScreenUtil().setHeight(20),
+                  ),
                   label: 'Share',
                   onPressed: () {},
                 ),
@@ -160,7 +172,7 @@ class NewsFeedCard extends StatelessWidget {
 }
 
 class PostActionButton extends StatelessWidget {
-  final IconData icon;
+  final Widget icon;
   final String label;
   final VoidCallback onPressed;
 
@@ -175,7 +187,7 @@ class PostActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton.icon(
       onPressed: onPressed,
-      icon: Icon(icon, color: FB_DARK_PRIMARY),
+      icon: icon,
       label: CustomText(
         text: label,
         fontSize: ScreenUtil().setSp(12),
