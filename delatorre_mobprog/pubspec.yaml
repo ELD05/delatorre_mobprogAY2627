@@ -1,6 +1,6 @@
 name: delatorre_mobprog
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0+1
 
 environment:
@@ -20,11 +20,11 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
-#  fonts:
-#    - family: Klavika
-#      fonts:
-#        - asset: assets/fonts/KlavikaBoldBold.otf
-#    - family: Frutiger
-#      fonts:
-#        - asset: assets/fonts/FrutigerLTStd-Roman.otf
+  fonts:
+    - family: Klavika
+      fonts:
+        - asset: assets/fonts/KlavikaBoldBold.otf
+    - family: Frutiger
+      fonts:
+        - asset: assets/fonts/FrutigerLTStd-Roman.otf
   uses-material-design: true

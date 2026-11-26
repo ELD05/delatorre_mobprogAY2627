@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'screens/home_screen.dart';
 import 'screens/newsfeed_screen.dart';
+import 'constants.dart';
 
 void main() {
   runApp(const DelaTorreFacebook());
@@ -19,11 +20,17 @@ class DelaTorreFacebook extends StatelessWidget {
       builder: (_, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'DelaTorreFacebook Replication',
+          title: 'Pisbok',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: FB_PRIMARY),
+            scaffoldBackgroundColor: FB_LIGHT_PINK,
+            appBarTheme: const AppBarTheme(backgroundColor: FB_LIGHT_BLUE),
+            cardTheme: const CardThemeData(color: Colors.white),
+          ),
           initialRoute: '/home',
           routes: {
             '/home': (context) => const HomeScreen(),
-            '/newsfeed': (context) => const NewsFeedScreen()
+            '/newsfeed': (context) => const NewsFeedScreen(),
           },
         );
       },
